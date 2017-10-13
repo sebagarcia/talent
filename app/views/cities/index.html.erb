@@ -1,0 +1,21 @@
+<div class="row center-xs">
+  <% @cities.each do |city| %>
+    <div class="col-xs-3">
+      <h1><%= city.name %></h1>
+      <h1><%= city.temp %></h1>
+      <!-- Esto es por si en el futuro se quiere mostrar la temperatura máxima y mínima -->
+      <!-- [<%= city.temp_min %>,
+      <%= city.temp_max %>] -->
+    </div>
+  <% end %>
+</div>
+
+<div class="row center-xs field">
+  <div class="col-xs-6">
+    <%= link_to "Actualizar temperatura actual", { :controller => 'cities',
+      :action => "create",
+      :list => @list},
+      :method => "post",
+      :class=> "myButton"%>
+  </div>
+</div>
